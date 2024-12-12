@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do you want to go on a date?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fff425, #ffa3a3);
+            background: url('pujo 2.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .glass-message-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            text-align: center;
+            width: 400px;
+            height: 236px;
+            color: white;
+            top: 5;
+            position: absolute;
+            top: 87px;
+        }
+
+        .glass-message-box h1 {
+            margin-top: 0;
+            padding: 5px 5px 37px 5px;
+            color: black;
+        }
+
+        .glass-message-box input[type="button"] {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            position: relative;
+            transition: transform 0.3s ease, background 0.3s ease;
+            left: 95px;
+            color: rgb(0, 0, 0);
+            background-color: rgb(7, 250, 68);
+        }
+
+        .glass-message-box input[type="button"]:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: scale(1.1);
+        }
+
+        .glass-message-box input[type="button"]:active {
+            background: rgba(255, 255, 255, 0.7);
+            transform: scale(0.95);
+        }
+
+        .glass-message-box input#no-button {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glass-message-box">
+        <h1>Do you want to go on a date?</h1>
+        <input id="yes-button" type="button" value="YES" onclick="clickYesButton()">
+        <input id="no-button" type="button" value="NO" onmouseover="hoverNoButton()">
+    </div>
+
+<script>
+    function clickYesButton() {
+        window.location.href = 'third.html';    
+    }
+
+    // Move button on hover
+    function hoverNoButton() {
+        // Get random x and y positions
+        let x = Math.random() * (window.innerWidth - 100); // Adjust for button width
+        let y = Math.random() * (window.innerHeight - 50); // Adjust for button height
+
+        document.getElementById('no-button').style.left = x + 'px';
+        document.getElementById('no-button').style.top = y + 'px';
+    }
+</script>
+
+</body>
+</html>

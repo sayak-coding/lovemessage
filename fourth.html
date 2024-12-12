@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Will You Marry Me?</title>
+  <!-- Link to External CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway');
+
+        :root {
+            font-family: 'Raleway', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Raleway', serif;
+            background: url('./moon.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #b9b9b9;
+            letter-spacing: 3px;
+            overflow-x: hidden;
+            height: 200vh;
+            background-color: rgb(0 49 69);
+        }
+
+        .popup {
+            opacity: 0;
+            visibility: hidden;
+            height: 400px;
+            width: 400px;
+            flex-shrink: 0;
+            border-radius: 3px;
+            position: fixed;
+            z-index: 3;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .popup-inside {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 50%;
+            box-shadow: 0 0 0 black;
+            transition: box-shadow 0.5s ease 0.7s, border-radius 0.35s ease 0.7s;
+        }
+
+        .backgrounds {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .background {
+            --offset: 0;
+            position: absolute;
+            left: var(--offset);
+            right: var(--offset);
+            bottom: var(--offset);
+            top: var(--offset);
+            background: linear-gradient(to right, #504bff, #4cfa63);
+            transform: scale(0);
+            transition: all 0.5s ease 0s;
+            border-radius: 50%;
+        }
+
+        .background6 {
+            --offset: 40%;
+            position: absolute;
+            left: var(--offset);
+            right: var(--offset);
+            bottom: var(--offset);
+            top: var(--offset);
+            background: white;
+            z-index: 5;
+            transition: all 0.8s ease 0.4s;
+        }
+
+        .content {
+            --offset: 0;
+            position: absolute;
+            left: var(--offset);
+            right: var(--offset);
+            bottom: var(--offset);
+            top: var(--offset);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.35s ease 0.75s;
+            z-index: 10;
+        }
+
+        .content-wrapper {
+            text-align: center;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .button.yes {
+            background-color: #4cfa63;
+            color: rgb(0, 0, 0);
+        }
+
+        .button.no {
+            background-color: #ff4b5c;
+            color: rgb(0, 0, 0);
+        }
+
+        .button:hover {
+            opacity: 0.9;
+        }
+
+        body.active .content {
+            opacity: 1;
+        }
+
+        body.active .popup {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        body.active .popup-inside {
+            border-radius: 0;
+            box-shadow: -50px 0 200px -50px #504bff, 50px 0 200px -50px #4cfa63;
+        }
+
+        body.active .background {
+            transform: scale(1);
+        }
+
+        body.active .background6 {
+            transform: scale(8);
+        }
+    </style>
+ 
+</head>
+<body>
+  <header>
+    <div class="overlay">
+      <div class="parallax">
+        <div class="one"></div>
+        <!--<div class="two"></div>
+        <div class="three"></div>
+        <div class="four"></div>-->
+        <div class="five"></div>
+      </div>
+      <h1>
+       
+      </h1>
+    </div>
+  </header>
+  <div>
+    
+    <div class="popup">
+        <div class="popup-inside">
+            <div class="backgrounds">
+                <div class="background"></div>
+                <div class="background background2"></div>
+                <div class="background background3"></div>
+                <div class="background background4"></div>
+                <div class="background background5"></div>
+                <div class="background background6"></div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content-wrapper">
+                <h1 style="color: black; padding: 40px;"><b>Will You Marry Me?</b></h1>
+                <p></p>
+                <div class="buttons">
+                    <button class="button yes" onclick="redirectToPage()">Yes</button>
+                    <button class="button no" onclick="hideNoButton()">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p><h1>
+      
+      
+      
+</h1>
+    </p>
+  </div>
+  <script>
+    // Scroll event to activate the popup
+    window.addEventListener('scroll', () => {
+        const scrollThreshold = 200;
+        if (window.scrollY > scrollThreshold) {
+            document.body.classList.add('active');
+        }
+    });
+
+    // Function to redirect to another page when "Yes" is clicked
+    function redirectToPage() {
+        window.location.href = "fifth.html"; // Replace with your target URL
+    }
+
+    // Function to hide the "No" button when clicked
+    function hideNoButton() {
+        const noButton = document.querySelector('.button.no');
+        noButton.style.display = 'none';
+    }
+</script>
+  
+  <!-- Link to External JavaScript -->
+  
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="script.js"></script>
+</html>

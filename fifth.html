@@ -1,0 +1,421 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=0.75">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=UnifrakturMaguntia" />
+  
+  <style>
+    body {
+    background: url("newspaper.jpg");
+    overflow: hidden;
+    
+  }
+  
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  div {
+    margin: 0;
+    padding: 0;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    position: absolute;
+    z-index: 0;
+  }
+  
+  #container {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    width: 1000px;
+    
+    height: 70%;
+    /*max-height: 500px;*/
+    /*max-weight: 500px;*/
+    top: 50%;
+    left: 50%;
+    -webkit-perspective: 5000px;
+    perspective: 5000px;
+    transform: translate(-50%, -50%) rotateY(20deg);
+  }
+  
+  #container p {
+    padding: 0 5px 0 5px;
+  }
+  
+  #container hr {
+    margin: 0 20px 0 20px;
+  }
+  
+  .panel-node {
+    width: 100%;
+  }
+  
+  .panel-cutout {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  #content {
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    overflow-y: scroll;
+    height: 100%;
+  }
+  
+  #content, .panel-content {
+    background: #fefee0;
+  }
+  
+  .panel-content {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .backface > * {
+    opacity: 0.25;
+  }
+  
+  #lorem {
+    font-size: 7em;
+    float: left;
+    color: red;
+    border: 1px solid black;
+    margin-right: 5px;
+  }
+  
+  #tree {
+    float: right;
+    width: 10em;
+    height: 10em;
+    border: 1px solid black;
+    margin: 0 5px 0 2px;
+  }
+
+  #container a {
+      text-decoration: none;
+    }
+
+    #container .circle {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      border-radius: 100vmax;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      left: 107px;
+      top: -15px;
+    }
+
+    #container .logo {
+      position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url('play 2.png');
+    background-size: cover;
+    border-radius: 86vmax;
+    background-position: center;
+    left: 30px;
+    top: 65px;
+    }
+
+    #container .text {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      font-family: consolas;
+      color: #000;
+      font-size: 17px;
+      animation: textRotation 8s linear infinite;
+    }
+
+    /*@keyframes textRotation {
+      to {
+        transform: rotate(360deg);
+      }
+    }*/
+
+    #container .text span {
+      position: absolute;
+      left: 50%;
+      font-size: 1.5em;
+      transform-origin: 0 100px;
+    }
+
+
+  </style>
+</head>
+<body>
+    <center>
+  <div id="container">
+    <div id="content">
+      <p>
+      <span id=""></span><h1 style="color:rgb(248, 6, 6);"><b>Symphony of Love</b></h1>
+      </p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;
+        In the quiet of twilight, where stars softly gleam,<br>
+        I find solace in the beauty of a cherished dream.<br>
+        Your eyes, like constellations, guide my way,<br>
+        A celestial map leading me astray.
+      </p>
+
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Your eyes</b>, oh, those pools of wonder and grace,<br>
+        Hold secrets of galaxies, time, and space.<br>
+        In their depths, I see stardust and moonlight,<br>
+        A universe unfolding, both tender and bright.
+      </p>
+      
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;
+        When you smiles, it's as if the sun awakes,<br>
+        Casting golden hues upon life's quiet lakes.<br>
+        Your lips curve gently, a crescent moon's embrace,<br>
+        And my heart dances to the rhythm of your grace.
+      </p>
+       
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Your smile</b>, a delicate bloom in morning dew,<br>
+        Paints rainbows across skies of azure blue.<br>
+        It whispers promises of love, soft and true,<br>
+        A melody only my heart and yours knew.
+      </p>
+       
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;
+        In the hush of nightfall, where shadows softly sway,<br>
+        I lose myself in the echoes of your laughter's play.<br>
+        Each note, like a comet streaking through the night,<br>
+        Ignites the darkness with its radiant light.
+      </p>
+       
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Your laughter</b>, a symphony of joyous delight,<br>
+        Melts away worries, like snow in sunlight.<br>
+        It weaves through the silence, a gentle breeze,<br>
+        And fills the air with sweet melodies.
+      </p>
+       
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;
+        With every breath you takes, the world comes alive,<br>
+        In your presence, all fears and doubts subside.<br>
+        For you is the melody, the rhythm, the song,<br>
+        That guides my heart where it truly belongs.
+      </p>
+       
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Your presence</b>, a sanctuary, a haven so serene,<br>
+        Where every moment feels like a dream.<br>
+        In your embrace, I find peace and rest,<br>
+        A refuge from life's tumultuous quest.
+      </p>
+       
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;
+        And as the night surrenders to the dawn's soft kiss,<br>
+        I cherish each moment, each memory of bliss.<br>
+        For in your eyes, your smile, your laughter's embrace,<br>
+        I find the beauty of love, time cannot erase.
+      </p>
+       
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>Your touch</b>, a soothing balm to weary souls,<br>
+        Heals wounds, making broken hearts whole.<br>
+        In its embrace, I find peace and serenity,<br>
+        A haven where love flourishes in eternity.
+      </p>
+       
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;
+        In your entirety, you are a masterpiece divine,<br>
+        A tapestry woven with threads of love entwined.<br>
+        And in the quiet of twilight, I'll forever stay,<br>
+        Enraptured by your beauty in every gentle sway.
+      </p>
+
+
+      <!--<input id="yes-button" type="button" value="Happy Ending" onclick="clickYesButton()">-->
+
+      <a href="./sixth.html">
+        <div class="circle">
+          <div class="logo"></div>
+          <div class="text">
+            <p>
+                I Love You - Forever and Always -
+            </p>
+          </div>
+        </div>
+      </a>
+
+
+    </div>
+  </div>
+  </div> </center>
+</body>
+<script>
+  // Hack to detect device scrollbar width.
+// When a mouse is plugged in, the contents of an element will shift over to accomodate the scrollbar.
+// We will detect this and shift the .panel-content's to the left via padding-right, else the panels and the main content view become out of sync.
+(function () {
+    var div = document.createElement('div');
+    div.style.width = '100px';
+    div.style.height = '100px';
+    div.style.overflow = 'scroll';
+    div.style.position = 'absolute';
+    div.style.top = '-9999px';
+    document.body.appendChild(div);
+  
+    var scrollBarWidth = div.offsetWidth - div.clientWidth;
+  
+    document.body.removeChild(div);
+  
+    var style = document.createElement('style');
+    document.querySelector('head').appendChild(style);
+  
+    var selector = '.panel-content';
+    var rule = `padding-right: ${scrollBarWidth}px`;
+  
+    if (style.sheet) {
+      if (style.sheet.insertRule) style.sheet.insertRule(`${selector} {${rule}}`, 0);
+      else style.sheet.addRule(selector, rule);
+    }
+    else if (style.styleSheet) style.styleSheet.addRule(selector, rule);
+  })();
+  
+  // Each articulation panel consists of three DOM elements
+  //  - a grandparent for 3d positioning
+  //  - a parent for clipping
+  //  - and a child to hold and 'scroll' content via changing transforms
+  function panel(html) {
+    var panelNode = document.createElement('div');
+    var panelCutoutNode = document.createElement('div');
+    var panelContentNode = document.createElement('div');
+      
+    panelNode.classList.add('panel-node');
+    
+    panelCutoutNode.classList.add('panel-cutout');
+    
+    panelContentNode.innerHTML = html;
+    panelContentNode.classList.add('panel-content');
+    
+    panelCutoutNode.appendChild(panelContentNode);
+    panelNode.appendChild(panelCutoutNode);
+    
+    return panelNode;
+  }
+  
+  // Keep the content panels in sync by translating them up or down according to the scroll distance
+  function syncPanelContent(tops, bottoms, scrollTop, containerHeight, panelHeight) {
+    for (var i = 0; i < tops.length; i++) {
+      var t = tops[i];
+      var b = bottoms[i];
+      var tTop = (i + 1) * panelHeight - scrollTop;
+      var bTop = -i * panelHeight - scrollTop - containerHeight;
+      t.style.transform = `translate3d(0,${tTop}px,0)`;
+      b.style.transform = `translate3d(0,${bTop}px,0)`;
+    }
+  }
+  
+  function transYrotX(y,x) {
+    return `translate3d(0,${y}px,0) rotateX(${x}rad)`;
+  }
+  
+  // Create num top and bottom panels based off the innerHTML of el with articulation angle.
+  // We nest panels and use `transform-style: preserve-3d` to get the tentacle curl effect.
+  // Should probably only use this on relatively simple el's, because we are going to need to create 2 * num deep copies of el and attach them to the DOM. Needless to say, this will scale poorly.
+  function createScrollOverlay(el, panelHeight, num, angle) {
+    var tops = [];
+    var bottoms = [];
+  
+    var topParent = el.parentNode;
+    var bottomParent = el.parentNode;
+  
+    var html = el.innerHTML;
+    
+    var totalTheta = 0;
+    
+    for (var i = 0; i < num; i++) {
+      var topPanel = panel(html);
+      var bottomPanel = panel(html);
+  
+      topPanel.style.height = `${panelHeight}px`;
+      bottomPanel.style.height = `${panelHeight}px`;
+      topPanel.style.transformOrigin = '50% 100% 0';
+      bottomPanel.style.transformOrigin = '50% 0% 0';
+      
+      var topPanelContent = topPanel.querySelector('.panel-content');
+      var bottomPanelContent = bottomPanel.querySelector('.panel-content');
+  
+      if (i === 0) {
+        topPanel.style.transform = transYrotX(-panelHeight, 0);
+        bottomPanel.style.top = '100%';
+        bottomPanel.style.transform = transYrotX(0, 0);
+      }
+      else {
+        topPanel.style.transform = transYrotX(-panelHeight + 0.25, angle);
+        bottomPanel.style.transform = transYrotX(panelHeight - 0.25, angle);
+  
+        totalTheta += angle;
+        totalTheta %= 2 * Math.PI;
+        if (Math.PI * (1 / 2) < totalTheta && totalTheta < Math.PI * (3 / 2)) {
+          topPanelContent.classList.add('backface');
+          bottomPanelContent.classList.add('backface');
+        }
+      }
+  
+      angle += 0.025;
+  
+      tops.push(topPanelContent);
+      bottoms.push(bottomPanelContent);
+  
+      topParent.appendChild(topPanel);
+      bottomParent.appendChild(bottomPanel);
+  
+      topParent = topPanel;
+      bottomParent = bottomPanel;
+    }
+  
+    syncPanelContent(tops, bottoms, 0, container.clientHeight, panelHeight);
+  
+    function update() {
+      var scrollTop = el.scrollTop;
+      var containerHeight = container.clientHeight;
+      requestAnimationFrame(function() {
+        syncPanelContent(tops, bottoms, scrollTop, containerHeight, panelHeight);
+      });
+    }
+  
+    el.onscroll = update;
+    window.onresize = update;
+    
+    // setInterval(function() {el.scrollTop++}, 32)
+  }
+  
+  var theta = 0.3;
+  var num = 20;
+  if (/iPhone|Android/.test(navigator.userAgent)) {
+    theta = 0.45;
+    num = 10;
+  }
+  
+  var $ = document.querySelector.bind(document);
+  createScrollOverlay($('#content'), 20, num, theta);
+
+  //function clickYesButton() {
+  //    
+  //    window.location.href = "4th-page.html"; // Redirect to another page
+  //  }
+
+  const text = document.querySelector(".text p");
+    text.innerHTML = text.innerText
+      .split("")
+      .map(
+        (char, i) => `<span style="transform:rotate(${i * 10.3}deg)">${char}</span>`
+      )
+      .join("");
+
+
+</script>
+</html>

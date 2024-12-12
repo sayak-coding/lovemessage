@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unveil The Magic</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        #container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-image: url('./pujo.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        h1 {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5em;
+            z-index: 2;
+        }
+
+        p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2em;
+            z-index: 2;
+        }
+
+        .piece {
+            position: absolute;
+            background-image: url('./pujo.jpg'); /* Same image */
+            background-size: cover;
+            opacity: 1;
+            animation: break 1.5s ease-out forwards;
+        }
+
+        @keyframes break {
+            to {
+                transform: translate(calc(var(--dx) * 200px), calc(var(--dy) * 200px)) rotate(calc(var(--r) * 360deg));
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Click To Unveil The Magic Within</h1>
+        
+    </div>
+
+    <script>
+        const container = document.getElementById('container');
+
+        function generateRandomPolygon() {
+            const points = [];
+            for (let i = 0; i < 6; i++) {
+                const x = Math.random() * 100;
+                const y = Math.random() * 100;
+                points.push(`${x}% ${y}%`);
+            }
+            return `polygon(${points.join(', ')})`;
+        }
+
+        function breakImage() {
+            const numPieces = 20;
+            const rect = container.getBoundingClientRect();
+            container.style.background = 'none'; // Remove the original background
+            container.innerHTML = ''; // Clear the content
+
+            for (let i = 0; i < numPieces; i++) {
+                const piece = document.createElement('div');
+                piece.classList.add('piece');
+                piece.style.width = `${rect.width}px`;
+                piece.style.height = `${rect.height}px`;
+                piece.style.left = '0';
+                piece.style.top = '0';
+                piece.style.backgroundPosition = `center`;
+                piece.style.clipPath = generateRandomPolygon(); // Irregular shapes
+                piece.style.setProperty('--dx', Math.random() * 2 - 1); // Random horizontal direction
+                piece.style.setProperty('--dy', Math.random() * 2 - 1); // Random vertical direction
+                piece.style.setProperty('--r', Math.random()); // Random rotation
+                container.appendChild(piece);
+            }
+
+            // Redirect to message.html after animation completes
+            setTimeout(() => {
+                window.location.href = 'second.html'; // Change to your desired page
+            }, 1500); // Match animation duration (1.5 seconds)
+        }
+
+        container.addEventListener('click', breakImage);
+    </script>
+</body>
+</html>
